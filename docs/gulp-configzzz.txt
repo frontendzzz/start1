@@ -1,0 +1,40 @@
+Shift + правая кнопка мыши в папке прэкта (открыть терминал проэкта)
+npm init (инициализирует базовый стартовый файл монифеста для вашего проэкта )
+npm i gulp --save-dev (установка пакета gulp)
+***--save-dev (ключ который позволяет сохранять пакет и версию в package.json)
+npm i gulp-sass --save-dev - установка sass
+npm i browser-sync --save-dev - установка browser-sync, для автоматического обновления страницы в браузере при сохранении в редакторе кода
+npm i gulp-concat gulp-uglifyjs --save-dev (concat - для конкотинации файлов, uglifyjs - для сжати js файлов)
+gulp-concat - (для конкатинации/склеивания файлов)
+gulp-uglifyjs - (для сжатия)
+
+npm i -g bower (сустановка bower) он нужен для установки сторонних библиотек, установка без --save-dev обязательно глобально
+bower i bootstrap - (установка бутстрап)
+bower i jqury - (установка jqury)
+bower i magnific-popup - (установка magnific-popup)
+bower uninstall --save <package> - (удалить пакет библиотеки)
+
+npm i gulp-cssnano gulp-rename - для сжатия и переиминования css файлов
+npm i --save-dev del - для удаления/подчищения 
+npm i --save-dev gulp-imagemin imagemin-pngquant - для сжатия картинок
+npm i --save-dev gulp-cache - для того что бы картинки кешировались
+npm i --save-dev gulp-autoprefixer - автопрефиксер
+
+
+
+
+return gulp.src('sourse-files') - выборка и путь файлов
+.pipe - Это вызов функции/команды
+.pipe(gulp.dest('app/js')) - куда выгрузить файл после исполнения функций/дейсвий над ним
+
+gulp.task('mytask', function(){
+  return gulp.src('sourse-files')
+  .pipe(plugin())
+  .pipe(gulp.dest('app/js'))
+});
+
+gulp.task('sass', function(){
+  return gulp.src(['!app/sass/main.sass', 'app/sass/**/*.sass']) - исключение из выюорки/ все файлы sass кроме этого
+  .pipe(plugin())
+  .pipe(gulp.dest('app/css'))
+});

@@ -1,0 +1,37 @@
+﻿git init - (создание репозитория)
+git config --global user.name "alina_frontendzzz"
+git config --global user.email frontendzzz@gmail.com
+git config --list
+git status 
+cd docs - (игнорить паку "docs")
+git status --untraked-files=all
+git rm --cached <name file> - (удалить фалы из отслеживания, у меня удалён node_modules)
+git add . - (добавить файлы/проиндексировать файлы...)
+git add <name file> - (добавить 1 файл)
+git add "name file/*.js" - (проиндексировать файлы...)
+!!!Коммитится только то что проидексировано, то что в кавычках коментарии коммита
+git commit -a -m"init" - закоммитить первый раз
+git commit -m"add files" - закоммитить проиндексированные файлы 
+                          !!!(после изменения файлы не проиндексированны)
+
+git commit -m"commit" - закоммитить
+git remote - смотреть удалённые репозитории
+
+
+git checkout -- <name file> - вернуться к закоммиченому файлу, 
+                              вернуть состояние после изменеия
+
+git log - история коммитов с коментариями
+git log --pretty=format:"%h - %an, %ar : %s" - история коммитов с 
+                                               коментариями в коротком формате
+git log --since=2.weeks - история коммитов с коментариями за последние 2 недели
+git log -p -2 ///  история коммитов с коментариями и изменениями 
+                   "-2" это число выводимых комитов
+
+git config --global core.editor "'C:/Program Files/Sublime Text 3/sublime_text.exe' -multiInst -notabbar -nosession -noPlugin"
+
+q (exid) - ОСТАНОВКА
+
+git help <имя команды> - помощь, документация по командам
+
+

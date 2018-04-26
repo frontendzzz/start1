@@ -1,0 +1,15 @@
+$(".owl-carousel").owlCarousel({
+    nav: true  / folse , - навигация по слайдеру
+    loop: true  / folse , - тач перелистывание слайдов
+    center: true  / folse , - центрирование слайда
+    autoplay: true  / folse , - автоперелистывание
+    autoplayTimeout: 1000 , интервал между перелистыванием
+    smartSpeed: 1000 , - скорость перелистывания слайдов
+    stagePadding: 20 , - паддинги в пикселях
+
+    responsive: { - настройка адаптивности
+      0: {
+        items: 2 - количество слайдов на экране
+      },
+    },
+  });

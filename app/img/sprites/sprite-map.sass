@@ -1,0 +1,82 @@
+
+$email-name: 'email'
+$email-x: 84px
+$email-y: 0px
+$email-offset-x: -84px
+$email-offset-y: 0px
+$email-width: 44px
+$email-height: 33px
+$email-total-width: 128px
+$email-total-height: 105px
+$email-image: 'sprite-map.png'
+$email: (84px, 0px, -84px, 0px, 44px, 33px, 128px, 105px, 'sprite-map.png', 'email', )
+$location-name: 'location'
+$location-x: 0px
+$location-y: 60px
+$location-offset-x: 0px
+$location-offset-y: -60px
+$location-width: 32px
+$location-height: 45px
+$location-total-width: 128px
+$location-total-height: 105px
+$location-image: 'sprite-map.png'
+$location: (0px, 60px, 0px, -60px, 32px, 45px, 128px, 105px, 'sprite-map.png', 'location', )
+$map-marker-name: 'map-marker'
+$map-marker-x: 0px
+$map-marker-y: 0px
+$map-marker-offset-x: 0px
+$map-marker-offset-y: 0px
+$map-marker-width: 43px
+$map-marker-height: 60px
+$map-marker-total-width: 128px
+$map-marker-total-height: 105px
+$map-marker-image: 'sprite-map.png'
+$map-marker: (0px, 0px, 0px, 0px, 43px, 60px, 128px, 105px, 'sprite-map.png', 'map-marker', )
+$phone-name: 'phone'
+$phone-x: 43px
+$phone-y: 0px
+$phone-offset-x: -43px
+$phone-offset-y: 0px
+$phone-width: 41px
+$phone-height: 41px
+$phone-total-width: 128px
+$phone-total-height: 105px
+$phone-image: 'sprite-map.png'
+$phone: (43px, 0px, -43px, 0px, 41px, 41px, 128px, 105px, 'sprite-map.png', 'phone', )
+$spritesheet-width: 128px
+$spritesheet-height: 105px
+$spritesheet-image: 'sprite-map.png'
+$spritesheet-sprites: ($email, $location, $map-marker, $phone, )
+$spritesheet: (128px, 105px, 'sprite-map.png', $spritesheet-sprites, )
+
+
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(../img/sprites/#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

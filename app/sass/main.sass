@@ -1,0 +1,81 @@
+@import "fonts.sass"
+
+
+@import "../img/sprites/sprite-map.sass"
+
+
+@import "../modules/header/header.sass"
+
+
+
+// Fonts variables
+$Lato-Regular: 'Lato-Regular'
+$Lato-Bold: 'Lato-Bold'
+$Lato-Semibold: 'Lato-Semibold'
+$Lato-Heavy: 'Lato-Heavy'
+$Roboto-Regular: 'Roboto-Regular'
+
+
+// color #FFF
+$main-color-1: #fff
+
+// Link & btn bg
+$main-color-2: #c26d64
+
+// Backgrounds 
+$body-bg: #dee4ea
+$btn-bg: $main-color-2
+
+// Text color
+$content-text-color: #999
+
+@mixin title_size
+  font-size: 3em
+  @media screen and (max-width: 992px)
+    font-size: 2em
+  @media screen and (max-width: 992px)
+    font-size: 1.5em
+
+@mixin link_basic
+  &:hover
+    text-decoration: none
+  &:focus
+    outline: none  
+  &:link
+    text-decoration: none
+  &:active
+    text-decoration: none
+  &:visited
+    text-decoration: none
+
+@mixin border
+  border: solid 1px #888
+ 
+
+ 
+body
+  margin: 0 
+  padding: 0
+  color: $content-text-color
+  #wrapper
+    // overflow: hidden
+    height: 100%
+  a 
+    @include link_basic
+  a 
+    img 
+      @include link_basic
+  ul
+    list-style: none
+  *:active, *:hover, *:focus
+    outline:0 !important
+    outline-offset:0 !important
+
+
+@import "../modules/nav/nav.sass"
+
+
+@import "../modules/footer/footer.sass"
+
+// * 
+//   @include border
